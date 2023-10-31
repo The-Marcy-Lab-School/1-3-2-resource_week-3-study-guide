@@ -1,6 +1,21 @@
 # Mod 1 - Week 1 Study Guide 
 
 **Table of Contents**
+* [1-2-0 Callbacks & Higher Order Functions](#1-2-0-callbacks--higher-order-functions)
+  * [First, A Normal Function](#first-a-normal-function)
+  * [Callbacks & Higher Order Functions](#callbacks--higher-order-functions)
+* [1-2-1 Array Higher Order Methods](#1-2-1-array-higher-order-methods)
+  * [Declarative vs. Imperative Code](#declarative-vs-imperative-code)
+  * [Array Higher Order Methods](#array-higher-order-methods)
+* [1-2-2 Regex](#1-2-2-regex)
+  * [Regex Basics](#regex-basics)
+  * [Character Sets](#character-sets)
+  * [Special Character Sets](#special-character-sets)
+  * [Quantifiers](#quantifiers)
+  * [Anchors](#anchors)
+  * [Creating Regular Expressions in JavaScript](#creating-regular-expressions-in-javascript)
+  * [Testing Patterns in JavaScript](#testing-patterns-in-javascript)
+  * [Finding Matches](#finding-matches)
 
 
 ## 1-2-0 Callbacks & Higher Order Functions
@@ -64,7 +79,6 @@ greetBetter('Ben', 'Hello World', (msg) => `${msg}?`) // Ben said, Hello World?
   - no longer need to specify HOW the person is greeting
   - aren't limited by the options we hard-coded
 * **Inline arrow functions** allow us to define single-use callbacks without storing them in a variable first.
-
 
 
 
@@ -181,44 +195,7 @@ numbers.filter((num) => num < 5);
 numbers.reduce((total, num) => total + num, 0);
 ```
 
-</details><br>
-
-
-
-### Advanced Stuff
-
-```js
-// Don't forget about more arguments!
-const myNums = [1, 2, 3, 4, 5];
-const multipliedByIndexAndLength = myNums
-  .map((num, idx, arr) => num * idx * arr.length);
-//[0, 10, 30, 60, 100]
-
-// chaining
-const numValuesBiggerThan12WhenTripled = myNums
-  .map((num) => num * 3)
-  .filter((num) => num > 12)
-  .length;
-
-console.log(numValuesBiggerThan12WhenTripled);
-// 1
-
-// advanced Reduce example
-const repeaters = [1, 2, 4, 2, 3, 1, 4, 6, 2];
-
-const frequencyCounter = (frequencies, num) => {
-  frequencies[num] = (frequencies[num] || 0) + 1;
-  return frequencies;
-};
-const frequencies = repeaters.reduce(frequencyCounter, {});
-console.log('frequencies', frequencies);
-// frequencies { '1': 2, '2': 3, '3': 1, '4': 2, '6': 1 }
-
-// more HOMs
-const hasAtLeastOneEven = myNums.some((num) => !(num % 2));
-console.log('hasAtLeastOneEven', hasAtLeastOneEven);
-// hasAtLeastOneEven true
-```
+</details>
 
 ## 1-2-2 Regex
 
@@ -226,7 +203,6 @@ console.log('hasAtLeastOneEven', hasAtLeastOneEven);
 
 * **Regex** is short for **Regular Expression**
 * A regular expression is a sequence of characters (or **tokens**) that specifies a **match pattern** in text.
-* A 
 
 ![](img/regular_expression_example.png)
 
